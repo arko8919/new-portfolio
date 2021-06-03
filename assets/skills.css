@@ -1,0 +1,128 @@
+/* // skills Page */
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.skills-icons {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.skills-icons div {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 1rem;
+    width: 15rem;
+}
+
+/* icons */
+.skills-icons i {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    background-size: contain;
+    margin-bottom: .4rem;
+}
+
+
+.skills-icons div:nth-child(1) i {
+    background-image: url(images/responsive.png);
+}
+
+.skills-icons div:nth-child(2) i {
+    background-image: url(images/intuitive.png);
+}
+
+.skills-icons div:nth-child(3) i {
+    background-image: url(images/dynamic.png);
+}
+
+.skills-icons div:nth-child(4) i {
+    background-image: url(images/fast.png);
+}
+
+/* skills list */
+.skills-list ul {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    /* change width of unordered list and move to the right to make sure that skills names are
+      visible and unordered list don't overflow */
+    left: 25%;
+    width: 75%;
+}
+
+.skills-list li {
+    position: relative;
+    margin-bottom: 1rem;
+    background-color: rgb(94, 120, 116);
+    padding: .3rem;
+    left: -35%; /* show skills names by moving them to left side */
+}
+
+.skills-list li::before, .skills-list li::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: rgb(238, 233, 237);
+    left: 35%; /* move skills bars to the right. This allow to use 100% width */
+}
+
+.skills-list li::before {
+    width: 100%;
+    z-index: 5;
+    background-color: rgb(238, 233, 237);
+}
+
+.skills-list li::after {
+    z-index: 10;
+    background-color: rgb(217, 162, 137);
+}
+
+/* skill progress on technology*/
+.skills-list li:nth-child(1)::after {
+    width: 60%;
+}
+
+.skills-list li:nth-child(2)::after {
+    width: 85%;
+}
+
+.skills-list li:nth-child(3)::after {
+    width: 70%;
+}
+
+.skills-list li:nth-child(4)::after {
+    width: 60%;
+}
+
+.skills-list li:nth-child(5)::after {
+    width: 65%;
+}
+
+.skills-list li:nth-child(6)::after {
+    width: 30%;
+}
+
+.skills-list li:nth-child(7)::after {
+    width: 25%;
+}
+
+.skills-list li:nth-child(8)::after {
+    width: 30%;
+}
+
+@media only screen and (min-width: 768px) {
+    .skills-icons {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+

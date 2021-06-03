@@ -1,0 +1,82 @@
+/* // 'Home' page styles */
+/* header image and text in background */
+.header-image {
+    position: relative;
+    box-shadow: 0 .2rem .2rem 0 rgb(94, 120, 116);
+    /* position it behind menu */
+    z-index: -10;
+}
+
+/* main page headers */
+.header-image article {
+    position: absolute;
+
+}
+
+.header-image p, .header-image h1 {
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgb(0,0, 0);;
+    font-weight: bold;
+}
+
+.header-image h1 {
+    margin-bottom: 0;
+}
+
+/* move words into new line */
+.header-image span {
+    display: block;
+}
+
+.header-image strong {
+    color: rgb(217, 162, 137);
+}
+
+/* main page headers position */
+.header-image article:nth-child(1) {
+    right: 9%;
+    top: 50%;
+}
+
+.header-image article:nth-child(2) {
+    left: 9%;
+    top: 15%;
+}
+
+.header-image article:nth-child(1) p {
+    font-size: .6rem;
+    text-transform: lowercase;
+}
+
+/* header image */
+.header-image source, .header-image img {
+    width: 100%;
+    max-height: 100vh;
+}
+
+/* main section styles */
+.container h2 {
+    margin-top: 4rem;
+}
+
+@media only screen and (min-width: 806px) {
+    .header-image p, .header-image h1 {
+        font-size: 1.4rem;
+        width: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .header-image p, .header-image h1 {
+        font-size: 2rem;
+        width: 10rem;
+    }
+}
+
+@media only screen and (min-width: 1366px) {
+    .header-image p, .header-image h1 {
+        font-size: 2.5rem;
+        width: 12rem;
+    }
+}
+

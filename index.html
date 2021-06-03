@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sas Web Development</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;1,300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/home.css">
+    <link rel="stylesheet" type="text/css" href="assets/work.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/script.js" defer></script>
+</head>
+<body>
+<header id="header">
+    <!-- Page main heading -->
+    <div class="header-image">
+        <article>
+            <h1>&lt;Web <span>&nbsp;Developer&gt;</span></h1>
+            <p> who focus on writing <strong>clean</strong>,
+                <span><strong>elegant</strong> and <strong>efficient</strong> code</span></p>
+        </article>
+        <article>
+            <p>"Hello, <span>&nbsp;I'm</span> <span>&nbsp;Artur"</span></p>
+        </article>
+        <picture>
+            <source
+                    media="(max-width: 767px)"
+                    sizes="(max-width: 767px) 100vw, 767px"
+                    srcset="assets/images/workplace/workplace-11-480.jpg 480w,
+                            assets/images/workplace/workplace-11-767.jpg 767w">
+            <source
+                    media="(min-width: 768px) and (max-width: 991px)"
+                    sizes="(max-width: 991px) 70vw, 694px"
+                    srcset="assets/images/workplace/workplace-43-538.jpg 538w,
+                            assets/images/workplace/workplace-43-694.jpg 694w">
+            <source
+                    media="(min-width: 992px) and (max-width: 1199px)"
+                    sizes="(max-width: 1200px) 60vw, 720px"
+                    srcset="assets/images/workplace/workplace-169-596.jpg 596w,
+                            assets/images/workplace/workplace-169-720.jpg 720w">
+            <img
+                    sizes="(max-width: 6183px) 40vw, 2473px"
+                    srcset="assets/images/workplace/workplace-480.jpg 480w,
+                            assets/images/workplace/workplace-922.jpg 922w,
+                            assets/images/workplace/workplace-1160.jpg 1160w,
+                            assets/images/workplace/workplace-1350.jpg 1350w,
+                            assets/images/workplace/workplace-1528.jpg 1528w,
+                            assets/images/workplace/workplace-1672.jpg 1672w,
+                            assets/images/workplace/workplace-1762.jpg 1762w,
+                            assets/images/workplace/workplace-1818.jpg 1818w,
+                            assets/images/workplace/workplace-1950.jpg 1950w,
+                            assets/images/workplace/workplace-2164.jpg 2164w,
+                            assets/images/workplace/workplace-2473.jpg 2473w"
+                    src="assets/images/workplace/workplace-2473.jpg"
+                    alt="">
+        </picture>
+    </div>
+    <!-- Navigation menu -->
+    <nav class="nav-strap">
+        <!-- Logo -->
+        <a href="index.html" class="logo"></a>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <ul class="social-media">
+                    <li>
+                        <a href="https://www.linkedin.com/in/artur-sas-dunajewski/" title="Connect with me on Linkedin" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/arko8919" title="Connect with me on Github"
+                           target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/artur.sasdunajewski" title="Connect with me on Facebook"
+                           target="_blank">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/arko8919/" title="Connect with me on Instagram"
+                           target="_blank">Instagram</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Navigation menu icon [ 3 vertical bars ] for small screen devices -->
+        <button type="button" class="icon-nav"></button>
+    </nav>
+</header>
+
+<main id="main" class="container">
+    <!-- Gallery of latest projects -->
+    <h2>My latest work</h2>
+    <section class="my-work">
+        <figure>
+            <img src="assets/images/portfolio-img.jpg" alt="">
+            <figcaption>
+                <div class="caption">
+                    <p>One of my first portfolio websites projects.</p>
+                    <p>React, Sass</p>
+                </div>
+                <div>
+                    <a href="http://www.artursd.com" target="_blank">Visit Website</a>
+                </div>
+            </figcaption>
+        </figure>
+        <figure>
+            <img src="assets/images/portfolio-img.jpg" alt="">
+            <figcaption>
+                <div class="caption">
+                    <p>One of my first portfolio websites projects.</p>
+                    <p>React, Sass</p>
+                </div>
+                <div>
+                    <a href="http://www.artursd.com" target="_blank">Visit Website</a>
+                </div>
+            </figcaption>
+        </figure>
+        <figure class="disable-element">
+            <img src="assets/images/portfolio-img.jpg" alt="">
+            <figcaption>
+                <div class="caption">
+                    <p>One of my first portfolio websites projects.</p>
+                    <p>React, Sass</p>
+                </div>
+                <div>
+                    <a href="http://www.artursd.com" target="_blank">Visit Website</a>
+                </div>
+            </figcaption>
+        </figure>
+    </section>
+    <!--  <a href="contact.html" class="link-contact-me">Contact Me</a> -->
+</main>
+
+<footer>
+    <div class="arrow-decoration">
+        <a class="top" href="#header"></a>
+    </div>
+    <p>@ 2020 Artur Sas Dunajewski</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sas Web Development</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;1,300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/contact.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/script.js" defer></script>
+</head>
+<body>
+<header id="header">
+    <!-- Navigation menu -->
+    <nav class="nav-strap">
+        <!-- Logo -->
+        <a href="index.html" class="logo"></a>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <ul class="social-media">
+                    <li>
+                        <a href="https://www.linkedin.com/in/artur-sas-dunajewski/" title="Connect with me on Linkedin" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/arko8919" title="Connect with me on Github"
+                           target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/artur.sasdunajewski" title="Connect with me on Facebook"
+                           target="_blank">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/arko8919/" title="Connect with me on Instagram"
+                           target="_blank">Instagram</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Navigation menu icon [ 3 vertical bars ] for small screen devices -->
+        <button type="button" class="icon-nav"></button>
+    </nav>
+</header>
+
+<main class="container">
+    <section class="intro-contact">
+        <!-- Page main heading -->
+        <h1><span>Contact Me</span></h1>
+        <!-- Basic information about contact -->
+        <p>I am interested in job offers and freelance opportunities. If you have other request or questions,
+            don't hesitate to contact me using email or form.</p>
+    </section>
+    <!-- Message form -->
+    <form method="POST" name="contact">
+        <div>
+            <label for="name">Name: <abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">Email: <abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="subject">Subject: </label>
+            <input type="text" id="subject" name="subject">
+        </div>
+        <div>
+            <label for="message">Message: <abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">Send</button>
+    </form>
+    <!-- Google map with my current location -->
+</main>
+
+<footer>
+    <div class="arrow-decoration">
+        <a class="top" href="#header"></a>
+    </div>
+    <p>@ 2020 Artur Sas Dunajewski</p>
+</footer>
+</body>
+</html>

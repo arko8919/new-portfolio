@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sas Web Development</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;1,300&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/normalize.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/about.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/script.js" defer></script>
+</head>
+<body>
+<header id="header">
+    <!-- Navigation menu -->
+    <nav class="nav-strap">
+        <!-- Logo -->
+        <a href="index.html" class="logo"></a>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+                <ul class="social-media">
+                    <li>
+                        <a href="https://www.linkedin.com/in/artur-sas-dunajewski/" title="Connect with me on Linkedin" target="_blank">Linkedin</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/arko8919" title="Connect with me on Github"
+                           target="_blank">Github</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/artur.sasdunajewski" title="Connect with me on Facebook"
+                           target="_blank">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/arko8919/" title="Connect with me on Instagram"
+                           target="_blank">Instagram</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Navigation menu icon [ 3 vertical bars ] for small screen devices -->
+        <button type="button" class="icon-nav"></button>
+    </nav>
+</header>
+
+<main class="container">
+    <!-- Introduction and image -->
+    <div class="wrapper-top">
+        <section class="intro">
+            <h1>About Me</h1>
+            <p>I'm a web developer currently based in Coventry, UK.</p>
+            <p>Meet with my passion for programming and creating clean, maintainable, and understandable code.</p>
+            <p>When I am not writing code I enjoy solving complex problems and turning them into simple solutions.</p>
+        </section>
+        <section class="intro-image">
+            <img
+                    sizes="(max-width: 2180px) 100vw, 2180px"
+                    srcset="assets/images/arthur-480.jpg 480w,
+                        assets/images/arthur-934.jpg 934w,
+                        assets/images/arthur-1297.jpg 1297w,
+                        assets/images/arthur-1550.jpg 1550w,
+                        assets/images/arthur-1766.jpg 1766w,
+                        assets/images/arthur-2018.jpg 2018w,
+                        assets/images/arthur-2180.jpg 2180w"
+                    src="assets/images/arthur-2180.jpg"
+                    alt="photo of the creator of the website.">
+        </section>
+        <!-- Random photos from my life -->
+        <div class="gallery">
+            <a href="assets/images/bike-fullsize.jpg" target="_blank">
+                <img src="assets/images/bike-preview.jpg" alt="silver road bike">
+            </a>
+            <a href="assets/images/computer-fullsize.jpg" target="_blank">
+                <img src="assets/images/computer-preview.jpg" alt="stationary computer">
+            </a>
+            <a href="assets/images/cup-fullsize.jpg" target="_blank">
+                <img src="assets/images/cup-preview.jpg"
+                     alt="cup with text, 'biggest coffee addict'">
+            </a>
+            <a href="assets/images/christmas-fullsize.jpg" target="_blank">
+                <img src="assets/images/christmas-preview.jpg" alt="christmas decorated houses">
+            </a>
+        </div>
+    </div>
+    <!-- Introduction to my interests -->
+    <div class="wrapper-bottom">
+        <section class="interests-intro">
+            <h2>my other interest</h2>
+            <p>When I'm not coding, you'll find me working out or cooking. I also love to spend time on
+                self-improvement, which is my daily healthy routine for mind and body.</p>
+        </section>
+        <!-- Icons representing interests -->
+        <ul class="interests-list">
+            <li>
+                <div></div>
+                <p><span>Self</span>improvement</p>
+            </li>
+            <li>
+                <div></div>
+                <p>Books</p>
+            </li>
+            <li>
+                <div></div>
+                <p>Technology</p>
+            </li>
+            <li>
+                <div></div>
+                <p>Gym</p>
+            </li>
+            <li>
+                <div></div>
+                <p>Cycling</p>
+            </li>
+            <li>
+                <div></div>
+                <p>Swimming</p>
+            </li>
+            <li>
+                <div></div>
+                <p>Meditation</p>
+            </li>
+        </ul>
+    </div>
+</main>
+
+<footer class="white-top">
+    <div class="arrow-decoration">
+        <a class="top" href="#header"></a>
+    </div>
+    <p>@ 2020 Artur Sas Dunajewski</p>
+</footer>
+</body>
+</html>

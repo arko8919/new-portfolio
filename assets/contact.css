@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+form div {
+    width: 100%;
+    padding-top: 1rem;
+}
+
+form label {
+    display: block;
+    padding-bottom: 0.2rem;
+    color: rgb(94, 120, 116);
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 0.4rem;
+}
+
+form textarea {
+    width: 100%;
+    resize: none;
+}
+
+button[type="submit"] {
+    margin-top: 2rem;
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        max-width: 70rem;
+    }
+
+    form, .intro-contact {
+        flex: 1;
+    }
+
+}

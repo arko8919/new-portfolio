@@ -1,0 +1,168 @@
+/* // Navigation Styles */
+/* navigation horizontal strap */
+.nav-strap {
+    position: relative;
+    height: 4rem;
+    background-color: rgb(94, 120, 116);
+}
+
+/* website logo */
+.logo {
+    width: 5rem;
+    height: inherit;
+    background: center / contain no-repeat url(images/logo/logo_transparent_2.png);
+    float: left;
+    margin-left: 1rem;
+}
+
+/* navigation menu */
+.menu {
+    position: absolute;
+    width: 100%;
+    top: 4rem; /* move it from top, the same height as parent "nav strap" */
+    background-color: rgb(94, 120, 116);
+    /* hide mobile menu */
+    transform: translate(0, -100%);
+    /* make it position behind parent "nav strap" */
+    z-index: -5;
+
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+
+    transition: transform .4s ease-out;
+}
+
+.menu li {
+    border-top: .11rem solid rgb(154, 170, 142);
+}
+
+.menu a {
+    padding: 1.2rem;
+    display: inline-block;
+    width: 100%;
+    color: inherit; /* add pseudo classes to control color */
+    text-transform: uppercase;
+}
+
+/* social media */
+.social-media {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 1.2rem;
+}
+
+.social-media li {
+    text-indent: -9999px; /* sends the text off-screen. keep text for accessibility purpose */
+    white-space: nowrap; /* because only the first line is indented */
+    border: none;
+    padding: .4rem;
+    margin: 0 .7rem;
+}
+
+.social-media a {
+    /* display block and height 100% makes anchor clickable  */
+    display: block;
+    outline: none; /* removes outlines which show when i click on link */
+    background: center / 1.5rem 1.5rem no-repeat;
+
+}
+
+.social-media li:nth-child(1) a {
+    background-image: url(images/social-media/linkedin.png);
+}
+
+.social-media li:nth-child(2) a {
+    background-image: url(images/social-media/github.png);
+}
+
+.social-media li:nth-child(3) a {
+    background-image: url(images/social-media/facebook.png);
+}
+
+.social-media li:nth-child(4) a {
+    background-image: url(images/social-media/instagram.png);
+}
+
+/* menu mobile three vertical bars */
+.icon-nav {
+    width: 2rem;
+    height: inherit;
+    background: center / contain no-repeat url(images/menu.png);
+    float: right;
+    margin-right: 1rem;
+    border: none;
+    outline: none; /* remove outline which shows when button is clicked */
+}
+
+/* remove outline which shows when button is clicked */
+.icon-nav:active {
+    outline: none;
+}
+
+/* open and close mobile menu */
+.active {
+    transform: none;
+}
+
+/* disable vertical bars mobile menu */
+@media only screen and (min-width: 806px) {
+    .nav-strap {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .menu {
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+
+        /* reset positions values to default */
+        transform: none;
+        position: initial;
+        z-index: auto;
+        transition: none;
+    }
+
+    .menu li {
+        border: none; /* turn off separation lines in mobile menu */
+    }
+
+    .menu a {
+        padding: 1rem;
+        text-transform: lowercase;
+        transition: color .3s;
+    }
+
+    /* hover effect only on devices with pointer */
+    /* change to icons which can be hover */
+    .menu a:hover {
+        color: rgba(217, 162, 137, .7);
+    }
+
+    .social-media li:hover {
+        box-shadow: 0 2px 2px rgba(217, 162, 137, .7),
+        0 -2px 2px rgba(217, 162, 137, .7),
+        2px 0 2px rgba(217, 162, 137, .7),
+        -2px 0 2px rgba(217, 162, 137, .7);
+        border-radius: 5px;
+    }
+
+    /* disable hamburger bar */
+    .icon-nav {
+        display: none;
+    }
+
+    /* social media */
+    .social-media li {
+        margin: 0;
+    }
+
+    .social-media a {
+        margin: 0;
+        width: 1rem;
+        height: 1rem;
+        background-size: 1rem 1rem;
+    }
+}
