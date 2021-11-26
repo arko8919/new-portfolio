@@ -1,0 +1,16 @@
+@charset "utf-8"; // in css single quotes are not allowed but in Sass they acceptable
+
+// base
+@use 'app/scss/base/normalize';
+@use 'app/scss/base/base';
+// layout
+@use 'app/scss/layout/navigation';
+@use 'app/scss/layout/header';
+@use 'app/scss/layout/about';
+@use 'app/scss/layout/skills';
+@use 'app/scss/layout/work';
+@use 'app/scss/layout/contact';
+@use 'app/scss/layout/footer';
+// components 
+@use 'app/scss/components/button';
+@use 'app/scss/components/social-media';

@@ -1,0 +1,66 @@
+// colors
+
+// basic colors
+$foreground-color: rgb(238, 233, 237);
+$background-color: rgb(154, 170, 142);
+$secondary-background-color: rgb(228, 222, 203);
+$secondary-foreground-color: rgb(94, 120, 116);
+$headers-color: rgb(217, 162, 137);
+$secondary-headers-color: rgb(238, 233, 237);
+
+// specific colors
+$nav-color: rgb(94, 120, 116);
+$box-shadow-color: rgb(94, 120, 116);
+$secondary-border-color: rgb(94, 120, 116);
+$caption-color: rgb(94, 120, 116);
+$footer-background-color: rgb(94, 120, 116);
+// specific colors
+$hover-color: rgb(217, 162, 137);
+$importance: rgb(217, 162, 137);
+// specific transparent colors
+$hover-transparent-color: rgba(217, 162, 137, 0.5);
+$shadow-transparent-color: rgba(217, 162, 137, 0.7);
+//
+$border-transparent-color: rgba(94, 120, 116, 0.7);
+// specific colors
+$border-color: rgb(154, 170, 142);
+
+// colors to style skills bar
+$list-item-color: rgb(94, 120, 116);
+$bar-color: rgb(238, 233, 237);
+$progress-color: rgb(217, 162, 137);
+
+// fonts styles
+$primary-font-stack: "Open Sans", sans-serif;
+$secondary-font-stack: "Montserrat", "sans-serif";
+$code-font-stack: "JetBrains Mono", monospace;
+
+// fonts
+$min-width: 320px;
+$max-width: 1700px;
+$min-font: 16px;
+$max-font: 24px;
+$mod-1: 1.2; // mobile
+$mod-2: 1.5; // desktop
+
+// breakpoints map used with mixin respond-to($breakpoints)
+$breakpoints: (
+    "very-small": (
+        min-width: 481px,
+    ),
+    "small": (
+        min-width: 769px,
+    ),
+    "medium": (
+        min-width: 806px,
+    ),
+    "large": (
+        min-width: 1024px,
+    ),
+    "very-large": (
+        min-width: 1366px,
+    ),
+    "huge": (
+        min-width: 1700px,
+    ),
+);

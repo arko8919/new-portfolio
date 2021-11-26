@@ -1,0 +1,184 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// "About" page styles
+.about {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+// Page is split into 2 sections. First section is an introduction and some images. The second is the interest section.
+.wrapper-top,
+.wrapper-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    grid-row-gap: 3rem;
+    row-gap: 3rem;
+
+    @include respond-to("large") {
+        grid-template-columns: repeat(2, minmax(0, 40vw));
+        grid-template-rows: repeat(2, minmax(0, auto));
+        grid-column-gap: 3rem;
+        column-gap: 3rem;
+    }
+
+    @include respond-to("very-large") {
+        grid-template-columns: repeat(2, minmax(0, 30rem));
+    }
+}
+
+.wrapper-bottom {
+    background-color: $secondary-background-color;
+    color: $secondary-foreground-color;
+
+    @include respond-to("small") {
+        grid-template-columns: minmax(0, 65vw);
+    }
+
+    @include respond-to("very-large") {
+        grid-template-columns: 30% 50%;
+        justify-items: center;
+    }
+}
+
+// Image of me
+.intro-image {
+    border-bottom: 0.1rem solid $border-transparent-color;
+
+    @include respond-to("large") {
+        border-bottom: none;
+        // grid baselines placement
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    img {
+        width: 80%;
+    }
+}
+
+// Introduction Text to my persona
+.intro {
+    @include respond-to("large") {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    p {
+        &:nth-child(2) {
+            font-weight: bold;
+        }
+    }
+}
+
+// Gallery of random images
+.gallery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+ //   align-items: center;
+
+    @include respond-to("large") {   
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    li {
+        width: 80%;
+       // height: 80%;
+        @include respond-to("medium") {
+          //  height: 40%;
+            width: 40%;
+        }
+
+        @include respond-to("large") {
+            //  height: 40%;
+              width: 20%;
+          }
+
+        a {
+            display: inline-block;
+            padding: 0.9rem;
+            box-shadow: 0 0.2rem 0.6rem $box-shadow-color;
+            margin: 0.7rem;
+        }
+
+        img {
+            box-shadow: inset 0 -1rem 1rem rgba(0, 0, 0, 0.1), 0 0 0 0.15rem rgb(228, 222, 203),
+                0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// change heading color to match background in this section
+.interests-intro {
+    @include respond-to("large") {
+        // grid baselines placement
+        grid-column: 1;
+        grid-row: 1;
+    }
+    h2 {
+        color: $secondary-headers-color;
+        margin-top: 1rem;
+    }
+}
+
+.interests-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include respond-to("large") {
+        // grid baselines placement
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    @include respond-to("huge") {
+        // grid baselines placement
+        grid-template-columns: repeat(3, 10rem);
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.7rem 0;
+        &:nth-child(1) div {
+            background-image: url(assets/images/interest/self-improvement.png);
+        }
+        &:nth-child(2) div {
+            background-image: url(assets/images/interest/books.png);
+        }
+        &:nth-child(3) div {
+            background-image: url(assets/images/interest/computers.png);
+        }
+        &:nth-child(4) div {
+            background-image: url(assets/images/interest/gym.png);
+        }
+        &:nth-child(5) div {
+            background-image: url(assets/images/interest/cycling.png);
+        }
+        &:nth-child(6) div {
+            background-image: url(assets/images/interest/swim.png);
+        }
+        &:nth-child(7) div {
+            background-image: url(assets/images/interest/meditation.png);
+        }
+    }
+
+    p {
+        font-size: 0.7rem;
+        text-transform: capitalize;
+        span {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    div {
+        width: 2.7rem;
+        height: 2.7rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}

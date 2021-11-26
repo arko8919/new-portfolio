@@ -1,0 +1,172 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// "General" Styles
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    // Base height needed for the body element
+    height: 100%;
+
+    // Responsive font size
+    @include fluid-type($min-width, $max-width, $min-font, $max-font);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    // iOS Safari
+    -webkit-touch-callout: none;
+    @include prefix(user-select, none, webkit moz ms khtml);
+
+    font-family: $primary-font-stack;
+
+    // Basic colors
+    color: $foreground-color;
+    background-color: $background-color;
+
+    // If there is not enough content on page to fill 100% height of page. This remove empty space on bottom of the page
+    min-height: 100%;
+
+    display: flex;
+    flex-flow: nowrap column;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li,
+figure,
+a,
+.code {
+    padding: 0;
+    margin: 0;
+}
+
+// Stacking order of nav menu and header in the same context
+header {
+    display: flex;
+    flex-direction: column-reverse;
+    // If the menu on a mobile device will open then it could go under the image or other content. This makes sure it will be on top of content in stacking order and be usable
+    z-index: 10;
+
+    // Change the position of the navigation menu below the header image
+    @include respond-to("large") {
+        flex-direction: column;
+    }
+}
+
+main {
+    z-index: 5; // Main element will be behind mobile menu in stacking order
+    // Moves content containers from edges of the viewport
+    & > div,
+    & > section,
+    & > form {
+        padding: 2rem 0.9rem;
+    }
+
+    @include respond-to("very-small") {
+        & > div,
+        & > section,
+        & > form {
+            padding: 2rem 2rem;
+        }
+    }
+
+    @include respond-to("small") {
+        & > div,
+        & > section {
+            padding: 2rem 4rem;
+        }
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-family: $secondary-font-stack;
+    text-transform: capitalize;
+}
+
+h2,
+h3,
+figure {
+    text-align: center;
+}
+
+h1,
+h2 {
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+// Text on header image font styling
+header,
+header p,
+header h1,
+.code {
+    font-family: $code-font-stack;
+}
+
+h1 {
+    color: $headers-color;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+    padding-left: 0.4rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: $headers-color;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+p {
+    padding: 0.3rem;
+    font-size: 0.9rem;
+}
+
+figure {
+    border: 1px solid $border-color;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block; // remove white space on bottom of image
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.disable-element {
+    // Disable third image from "my latest work" and enable on large screen
+    display: none;
+
+    @include respond-to("huge") {
+        display: block;
+    }
+}
+.container {
+    // Main section styles
+    h2 {
+        margin-top: 4rem;
+    }
+}

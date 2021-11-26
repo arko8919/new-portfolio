@@ -1,0 +1,70 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Social media
+.social-media {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: 1.2rem;
+
+    li {
+        text-indent: -9999px; // Sends the link text off-screen. Keep text for accessibility purpose
+        white-space: nowrap; // Because only the first line is indented
+        border: none;
+        // padding: 0.4rem;
+        margin: 0 0.7rem;
+
+        @include respond-to("medium") {
+            margin: 0;
+        }
+
+        &:nth-child(1) a {
+            background-image: url(assets/images/social-media/linkedin.png);
+        }
+        &:nth-child(2) a {
+            background-image: url(assets/images/social-media/github.png);
+        }
+        &:nth-child(3) a {
+            background-image: url(assets/images/social-media/facebook.png);
+        }
+        &:nth-child(4) a {
+            background-image: url(assets/images/social-media/instagram.png);
+        }
+
+        &:hover {
+            @include respond-to("medium") {
+                box-shadow: 0 2px 2px $shadow-transparent-color, 0 -2px 2px $shadow-transparent-color,
+                    2px 0 2px $shadow-transparent-color, -2px 0 2px $shadow-transparent-color;
+                border-radius: 5px;
+            }
+        }
+
+        a {
+            // Display block and height 100%, makes anchor element clickable
+            display: block;
+            outline: none; // Remove outlines which show when i click on link
+            background: center / 1.5rem 1.5rem no-repeat;
+            padding: 0.7rem;
+
+            @include respond-to("medium") {
+                margin: 0;
+                width: 1rem;
+                height: 1rem;
+                background-size: 1rem 1rem;
+            }
+
+            // Because I was so smart to build a list inside list I have to unset unwanted changes.
+            // I placed social media list inside menu list and specificity of menu items properties set properties of social media items
+            @media screen and (pointer: fine) {
+                &:after {
+                    all: unset;
+                }
+
+                &:hover:after {
+                    all: unset;
+                }
+            }
+        }
+    }
+}

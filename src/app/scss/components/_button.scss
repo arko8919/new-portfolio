@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.button {
+    display: inline-block;
+    border: 2px solid $secondary-border-color;
+    color: $foreground-color;
+    font-weight: bold;
+    background-color: $background-color;
+    padding: 0.4rem 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+        background-color: $hover-color;
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sas Web Development</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital,wght@0,400;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <header id="header">
+        <!-- Navigation menu -->
+        <nav class="nav-strap">
+            <!-- Website logo of left side -->
+            <a href="index.html" class="logo"></a>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="work.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <!-- Links to social media -->
+                    <ul class="social-media">
+                        <li>
+                            <a href="https://www.linkedin.com/in/artur-sas-dunajewski/"
+                                title="Connect with me on Linkedin" target="_blank">Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/arko8919" title="Connect with me on Github"
+                                target="_blank">Github</a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/artur.sasdunajewski" title="Connect with me on Facebook"
+                                target="_blank">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/arko8919/" title="Connect with me on Instagram"
+                                target="_blank">Instagram</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Navigation menu icon [ 3 vertical bars ] for small screen devices -->
+            <button type="button" class="icon-nav"></button>
+        </nav>
+    </header>
+
+    <main class="container-contact">
+        <section class="intro-contact">
+            <h1><span>Contact Me</span></h1>
+            <!-- Basic information about contact information -->
+            <p>I'm interested in job offers and freelance opportunities. If you have other requests or questions, don't hesitate to contact me using email or form.</p>
+            <p>I'm currently lotacted in Bedworth near Coventry. In a situation when I accept a job offer I could relocate if this is necessary.</p>
+        </section>
+        <!-- Message form -->
+        <form method="POST" name="contact">
+            <div>
+                <label for="name">Name: <abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email: <abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="subject">Subject: </label>
+                <input type="text" id="subject" name="subject">
+            </div>
+            <div>
+                <label for="message">Message: <abbr title="This field is mandatory"
+                        aria-label="required">*</abbr></label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button class="button" type="submit">Send</button>
+        </form>
+        <!-- Google map with my current location  -->
+        <section class="map" width="800" height="600">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38937.76475551821!2d-1.5499372503851323!3d52.41373873053509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870b151656e22b7%3A0x4f660f5564f0689!2sCoventry!5e0!3m2!1sen!2suk!4v1637491763576!5m2!1sen!2suk"
+                width="800" height="600" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <div class="arrow-decoration">
+            <a class="top" href="#header"></a>
+        </div>
+        <p>@ 2020 Artur Sas Dunajewski</p>
+    </footer>
+</body>
+
+</html>

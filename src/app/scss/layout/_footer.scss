@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+
+// Footers styles 
+.white-top {
+    background-color: $secondary-background-color;
+}
+
+footer {
+    padding-top: 5rem;
+
+    p {
+        text-align: center;
+        margin: 0;
+        padding: 2rem;
+        background-color: $footer-background-color;
+    }
+}
+
+.arrow-decoration {
+    width: 5rem;
+    height: 2.5rem;
+    background-color: $footer-background-color;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    border-bottom: 0;
+    margin: 0 auto;
+}
+
+.top {
+    display: inline-block;
+    background: center/ contain no-repeat url(assets/images/footer/arrow-up.png);
+    margin-top: 0.7rem;
+    height: 100%;
+    width: 100%;
+}
