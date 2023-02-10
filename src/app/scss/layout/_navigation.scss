@@ -1,89 +1,104 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use "../abstracts/index" as *;
 
 // "Navigation" Styles
 // Navigation horizontal strap
-
 .nav-strap {
     position: relative;
-    height: 4rem;
-    background-color: $nav-color;
+    height: 6rem; // Nav strap height
+    display: flex;
+    // This sets the positions of the hamburger icon
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: end;
+
+    @include respond-to("very-small") {
+        height: 4rem; // Nav strap height
+    }
 
     @include respond-to("large") {
         display: flex;
         flex-flow: row nowrap;
     }
-}
 
-// Website logo
-.logo {
-    width: 5rem;
-    height: inherit;
-    background: center / contain no-repeat url(assets/images/logo/logo-sas.png);
-    float: left;
-    margin-left: 1rem;
+    .menu-text {
+        padding-right: 1.3rem;
+        text-transform: uppercase;
+
+        @include respond-to("large") {
+            display: none;
+        }
+    }
 }
 
 // Navigation menu
 .menu {
+    background: $background-color;
     position: absolute;
     width: 100%;
-    top: 4rem; // Move it from the top, the same height as the parent "nav strap"
-    background-color: $nav-color;
+    top: 6rem; // Move it from the top, using the same height as the height of the parent "nav strap"
     // Hide mobile menu
-    transform: translate(0, -100%);
+    left: -100%;
+
     // Make it position under parent "nav strap"
-    z-index: -5;
+    z-index: 5;
+    height: 100vh; // Cover screen
 
     display: flex;
     flex-flow: column nowrap;
     text-align: center;
+    transition: left 0.4s;
 
-    transition: transform 0.4s ease-out;
+    @include respond-to("very-small") {
+        top: 4rem; // Move it from the top, using the same height as the height of the parent "nav strap"
+        height: initial; // Reset menu height
+    }
 
     @include respond-to("large") {
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        background: none;
 
         // Reset values to default
         transform: none;
         position: initial;
         z-index: auto;
         transition: none;
+
+        width: 82%;
+        margin-left: 18%;
     }
 
-    li {
-        padding: 1.2rem;
-        border-top: 0.11rem solid $border-color;
+    .links {
+        border-bottom: 0.11rem solid $grey; // Add menu items separation lines
 
         @include respond-to("large") {
-            border: none; // Turn off menu items separation lines on larger screen
+            border: none; // Turn off menu items separation lines on a larger screen
             padding: 1rem;
-            transition: color 0.3s;
-        }
-
-        // The hover effect only works on devices with pointer
-        @media screen and (pointer: fine) {
-            &:hover {
-                @include respond-to("large") {
-                    color: $hover-transparent-color;
-                }
-            }
         }
 
         a {
+            padding: 2.2rem;
             display: inline-block;
             width: 100%;
-            color: inherit; // Add pseudo classes to control color ???
+            color: $white;
             text-transform: uppercase;
             position: relative;
+            font-weight: bold;
+            font-size: 1.5rem;
+
+            @include respond-to("very-small") {
+                font-size: 1rem;
+                padding: 1rem;
+            }
 
             @include respond-to("large") {
                 text-transform: lowercase;
+                font-weight: normal;
+                padding: 0.2rem;
             }
 
-            // Underline effect under menu items on screens with pointer
+            // Horizontal line animation under menu items on screens with a pointer 
             @media screen and (pointer: fine) {
                 &:after {
                     content: "";
@@ -93,7 +108,7 @@
                     height: 2px;
                     bottom: 0;
                     left: 0;
-                    background-color: $hover-transparent-color;
+                    background-color: $grey-800;
                     transform-origin: bottom right;
                     transition: transform 0.5s ease-out;
                 }
@@ -109,25 +124,5 @@
 
 // Open and close mobile menu
 .active {
-    transform: none;
-}
-
-// Menu mobile three vertical bars
-.icon-nav {
-    width: 2rem;
-    height: inherit;
-    background: center / contain no-repeat url(assets/images/menu.png);
-    float: right;
-    margin-right: 1rem;
-    border: none;
-    outline: none;
-
-    // Disable hamburger bar when larger screen
-    @include respond-to("large") {
-        display: none;
-    }
-
-    &:active {
-        outline: none;
-    }
+    left: 0;
 }

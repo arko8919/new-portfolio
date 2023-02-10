@@ -2,45 +2,77 @@
 @use '../abstracts/mixins' as *;
 
 
-// "Skills" page
-.container-skills {
-    display: flex;
-    flex-flow: column nowrap;
-    max-width: 40rem;
-    margin: 0 auto;
+.skills-intro,
+.skills-list,
+.skills {
+
+    // Align sections
+    @include respond-to("very-small") {
+        padding: 2rem 5rem;
+    }
+
+    @include respond-to("medium") {
+        padding: 2rem 10rem;
+    }
+
+    @include respond-to("large") {
+        padding: 2rem 12rem;
+    }
+
+    @include respond-to("huge") {
+        padding: 2rem 30rem;
+    }
 }
-// Skill list with icons
+
+// List of skills with icons
 .skills-icons {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
-
-    @include respond-to("small") {
-        grid-template-columns: 1fr 1fr;
-    }
 
     div {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         text-align: center;
-        margin: 2rem 1rem;
-        width: 15rem;
+        padding: 2rem;
 
         &:nth-child(1) i {
             background-image: url(assets/images/responsive.png);
         }
+
         &:nth-child(2) i {
             background-image: url(assets/images/intuitive.png);
         }
+
         &:nth-child(3) i {
             background-image: url(assets/images/dynamic.png);
         }
+
         &:nth-child(4) i {
             background-image: url(assets/images/fast.png);
         }
+
+        h3 {
+            color: $grey;
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 1rem 0;
+
+            @include respond-to("small") {
+                padding: 0;
+            }
+
+            @include respond-to("large") {
+                padding: 1rem;
+            }
+        }
     }
-    // Icons of skills
+
+    // Icons skills
     i {
         display: block;
         width: 5rem;
@@ -50,79 +82,80 @@
     }
 }
 
+// Technology list
 .skills-list {
-    // Technology list
     ul {
         display: flex;
         flex-flow: column nowrap;
-        position: relative;
-        // Change width of list items box area and move them to the right to make sure that skills names are visible and unordered list don't overflow 
-        left: 25%;
-        width: 75%;
-    }
-    // Each list item is a progress bar
-    li {
-        position: relative;
-        margin-bottom: 1rem;
-        background-color: $list-item-color;
-        padding: 0.3rem;
-        left: -35%; // Show skills names by moving them to left side 
-        font-size: .8rem;
-        @include respond-to("small") {
-            font-size: 1rem;
-        }
 
-        &:before,
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            height: 100%;
-            background-color: $bar-color;
-            left: 35%; // Move skills bars to the right. This allow to use 100% width 
-        }
-        // Full skill bar
-        &:before {
-            width: 100%;
-            z-index: 5;
-            background-color: $bar-color;
-        }
-        // How much progress in a skill bar
-        &:after {
-            z-index: 10;
-            background-color: $progress-color;
-        }
-        // Skill progress on technology
-        &:nth-child(1)::after {
-            width: 60%;
-        }
+        width: 100%;
 
-        &:nth-child(2)::after {
-            width: 85%;
-        }
+        // Each list item is a progress bar
+        li {
+            padding: 0.2rem;
 
-        &:nth-child(3)::after {
-            width: 70%;
-        }
+            // Name of technology
+            .technology {
+                padding-bottom: .3rem;
+            }
 
-        &:nth-child(4)::after {
-            width: 60%;
-        }
+            // Progress bar
+            .bar {
+                position: relative;
+                top: 0;
+                left: 0;
+                background-color: $grey-400;
+                height: 1.1rem;
+                z-index: 10;
+                text-align: right;
+                color: $grey;
+                padding: 0 0.4rem;
 
-        &:nth-child(5)::after {
-            width: 65%;
-        }
+                // How much progress in a skill bar
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    height: 1.1rem;
+                    padding: 0 0.4rem;
+                    left: 0; // Move skills bars to the right. This allow to use 100% width 
+                    z-index: -10;
+                    background: $text;
+                }
+            }
 
-        &:nth-child(6)::after {
-            width: 30%;
-        }
+            // Skill progress on technology
+            &:nth-child(1) .bar:after {
+                width: 74%;
+            }
 
-        &:nth-child(7)::after {
-            width: 25%;
-        }
+            &:nth-child(2) .bar:after {
+                width: 72%;
+            }
 
-        &:nth-child(8)::after {
-            width: 30%;
+            &:nth-child(3) .bar::after {
+                width: 78%;
+            }
+
+            &:nth-child(4) .bar::after {
+                width: 60%;
+            }
+
+            &:nth-child(5) .bar::after {
+                width: 64%;
+            }
+
+            &:nth-child(6) .bar::after {
+                width: 30%;
+            }
+
+            &:nth-child(7) .bar::after {
+                width: 45%;
+            }
+
+            &:nth-child(8) .bar::after {
+                width: 30%;
+            }
         }
     }
 }

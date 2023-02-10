@@ -12,5 +12,9 @@
 @use 'app/scss/layout/contact';
 @use 'app/scss/layout/footer';
 // components 
+@use 'app/scss/components/page-loading';
 @use 'app/scss/components/button';
 @use 'app/scss/components/social-media';
+@use 'app/scss/components/hamburger-icon';
+@use 'app/scss/components/logo';
+@use 'app/scss/components/nav-underline';

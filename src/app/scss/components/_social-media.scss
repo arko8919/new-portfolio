@@ -1,5 +1,4 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use "../abstracts/index" as *;
 
 // Social media
 .social-media {
@@ -12,58 +11,53 @@
         text-indent: -9999px; // Sends the link text off-screen. Keep text for accessibility purpose
         white-space: nowrap; // Because only the first line is indented
         border: none;
-        // padding: 0.4rem;
-        margin: 0 0.7rem;
+        padding: 1.8rem 3rem;
 
-        @include respond-to("medium") {
-            margin: 0;
+        @include respond-to("very-small") {
+            padding: 0.5rem 2rem;
+        }
+
+        @include respond-to("large") {
+            padding: 1.8rem 0.8rem;
         }
 
         &:nth-child(1) a {
             background-image: url(assets/images/social-media/linkedin.png);
         }
+
         &:nth-child(2) a {
             background-image: url(assets/images/social-media/github.png);
         }
+
         &:nth-child(3) a {
             background-image: url(assets/images/social-media/facebook.png);
         }
+
         &:nth-child(4) a {
             background-image: url(assets/images/social-media/instagram.png);
         }
 
-        &:hover {
-            @include respond-to("medium") {
-                box-shadow: 0 2px 2px $shadow-transparent-color, 0 -2px 2px $shadow-transparent-color,
-                    2px 0 2px $shadow-transparent-color, -2px 0 2px $shadow-transparent-color;
-                border-radius: 5px;
-            }
-        }
-
         a {
-            // Display block and height 100%, makes anchor element clickable
+            // Set display to block and height to 100%, to make anchor element clickable
             display: block;
-            outline: none; // Remove outlines which show when i click on link
-            background: center / 1.5rem 1.5rem no-repeat;
-            padding: 0.7rem;
+            outline: none; // Remove outlines which show when link is clicked
+            background: center / 2rem 2rem no-repeat;
+            padding: 1rem;
 
-            @include respond-to("medium") {
-                margin: 0;
-                width: 1rem;
-                height: 1rem;
-                background-size: 1rem 1rem;
+            // Animation effect on social media icons
+            transform: rotate(0deg);
+            transition: transform 0.5s;
+
+            &:hover {
+                transform: rotate(60deg);
             }
 
-            // Because I was so smart to build a list inside list I have to unset unwanted changes.
-            // I placed social media list inside menu list and specificity of menu items properties set properties of social media items
-            @media screen and (pointer: fine) {
-                &:after {
-                    all: unset;
-                }
+            @include respond-to("very-small") {
+                background-size: 1.3rem 1.3rem;
+            }
 
-                &:hover:after {
-                    all: unset;
-                }
+            @include respond-to("large") {
+                background-size: 1rem 1rem;
             }
         }
     }

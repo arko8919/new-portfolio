@@ -1,0 +1,85 @@
+@use "../abstracts/index" as *;
+
+.nav-icon {
+    position: relative;
+    width: 3.2rem; // Width of bar 
+    height: 2.3rem; // Fixed height of hamburger icon 
+    margin-right: 1.2rem;
+    transform: rotate(0deg);
+    transition: 1.2s rotate ease-in-out;
+    cursor: pointer;
+
+    //  Disable hamburger bar when larger screen
+
+    @include respond-to("very-small") {
+        width: 2.5rem; // Width of bar 
+        height: 1.8rem; // Fixed height of hamburger icon 
+    }
+
+    @include respond-to("small") {
+        width: 2.2rem; // Width of bar 
+        height: 1.6rem; // Fixed height of hamburger icon 
+    }
+
+    // Disable hamburger icon 
+    @include respond-to("large") {
+        display: none;
+    }
+}
+
+.nav-icon span {
+    display: block;
+    position: absolute;
+    height: .32rem; // Thickness of each bar
+    width: 100%;
+    background: #fff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+
+    @include respond-to("very-small") {
+        height: .25rem; // Thickness of each bar
+    }
+
+    @include respond-to("small") {
+        height: .2rem; // Thickness of each bar
+    }
+
+}
+
+.nav-icon span:nth-child(1) {
+    top: 0px; // The vertical gap between each bar
+}
+
+.nav-icon span:nth-child(2),
+.nav-icon span:nth-child(3) {
+    top: 9px; // The vertical gap between each bar
+    margin-left: -.6rem;
+}
+
+.nav-icon span:nth-child(4) {
+    top: 18px; // The vertical gap between each bar
+}
+
+.nav-icon.open span:nth-child(1) {
+    top: 9px;
+    width: 0%;
+    left: 50%;
+}
+
+.nav-icon.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.nav-icon.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.nav-icon.open span:nth-child(4) {
+    top: 9px;
+    width: 0%;
+    left: 50%;
+}

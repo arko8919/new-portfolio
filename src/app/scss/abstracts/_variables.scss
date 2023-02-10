@@ -1,66 +1,57 @@
-// colors
+// Colors
+$primary: rgb(27, 40, 44); // #1B282C
+$secondary: rgb(53, 182, 221); // #35B6DD
+$text: rgb(40, 136, 166); // #2888A6
+$highlight: rgb(207, 243, 255); // #CFF3FF
 
-// basic colors
-$foreground-color: rgb(238, 233, 237);
-$background-color: rgb(154, 170, 142);
-$secondary-background-color: rgb(228, 222, 203);
-$secondary-foreground-color: rgb(94, 120, 116);
-$headers-color: rgb(217, 162, 137);
-$secondary-headers-color: rgb(238, 233, 237);
 
-// specific colors
-$nav-color: rgb(94, 120, 116);
-$box-shadow-color: rgb(94, 120, 116);
-$secondary-border-color: rgb(94, 120, 116);
-$caption-color: rgb(94, 120, 116);
-$footer-background-color: rgb(94, 120, 116);
-// specific colors
-$hover-color: rgb(217, 162, 137);
-$importance: rgb(217, 162, 137);
-// specific transparent colors
-$hover-transparent-color: rgba(217, 162, 137, 0.5);
-$shadow-transparent-color: rgba(217, 162, 137, 0.7);
-//
-$border-transparent-color: rgba(94, 120, 116, 0.7);
-// specific colors
-$border-color: rgb(154, 170, 142);
+// Basic colors
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+$grey: #495057;
 
-// colors to style skills bar
-$list-item-color: rgb(94, 120, 116);
-$bar-color: rgb(238, 233, 237);
-$progress-color: rgb(217, 162, 137);
+$grey-100: #f8f9fa;
+$grey-200: #e9ecef;
+$grey-300: #dee2e6;
+$grey-400: #ced4da;
+$grey-500: #adb5bd;
+$grey-600: #6c757d;
+$grey-700: #495057;
+$grey-800: #343a40;
+$grey-900: #212529;
 
-// fonts styles
+$background-color: linear-gradient(to right, rgba($primary, 1), rgba($secondary, 1));
+$nav-underline: linear-gradient(to right, rgba($grey, 0.1), rgba($grey-200, 0.3));
+
+// Fonts styles
 $primary-font-stack: "Open Sans", sans-serif;
 $secondary-font-stack: "Montserrat", "sans-serif";
 $code-font-stack: "JetBrains Mono", monospace;
 
-// fonts
+// Data for fluid-type(... ) mixin
 $min-width: 320px;
 $max-width: 1700px;
-$min-font: 16px;
+$min-font: 10px;
 $max-font: 24px;
-$mod-1: 1.2; // mobile
-$mod-2: 1.5; // desktop
+$mod-1: 1.1; // mobile
+$mod-2: 1.4; // desktop
 
-// breakpoints map used with mixin respond-to($breakpoints)
+// Breakpoints map used with mixin respond-to($breakpoints)
 $breakpoints: (
-    "very-small": (
-        min-width: 481px,
+    "very-small": (min-width: 481px,
     ),
-    "small": (
-        min-width: 769px,
+    "small": (min-width: 769px,
     ),
-    "medium": (
-        min-width: 806px,
+    "medium": (min-width: 806px,
     ),
-    "large": (
-        min-width: 1024px,
+    "large": (min-width: 1024px,
     ),
-    "very-large": (
-        min-width: 1366px,
+    "very-large": (min-width: 1366px,
     ),
-    "huge": (
-        min-width: 1700px,
+    "huge": (min-width: 1700px,
+    ),
+    "2k": (min-width: 2560px,
+    ),
+    "4k": (min-width: 3000px,
     ),
 );

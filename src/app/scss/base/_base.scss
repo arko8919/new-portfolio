@@ -1,11 +1,11 @@
-@use "../abstracts/variables" as *;
-@use "../abstracts/mixins" as *;
+@use "../abstracts/index" as *;
+@use "../components/page-loading" as *;
 
 // "General" Styles
 html {
     box-sizing: border-box;
     font-size: 100%;
-    // Base height needed for the body element
+
     height: 100%;
 
     // Responsive font size
@@ -19,15 +19,13 @@ html {
 }
 
 body {
-    // iOS Safari
-    -webkit-touch-callout: none;
-    @include prefix(user-select, none, webkit moz ms khtml);
+    user-select: none;
 
     font-family: $primary-font-stack;
 
     // Basic colors
-    color: $foreground-color;
-    background-color: $background-color;
+    color: $white;
+    background: $background-color;
 
     // If there is not enough content on page to fill 100% height of page. This remove empty space on bottom of the page
     min-height: 100%;
@@ -36,11 +34,8 @@ body {
     flex-flow: nowrap column;
 }
 
+// Reset padding and margin on some elements
 body,
-h1,
-h2,
-h3,
-p,
 ul,
 li,
 figure,
@@ -50,96 +45,139 @@ a,
     margin: 0;
 }
 
-// Stacking order of nav menu and header in the same context
-header {
-    display: flex;
-    flex-direction: column-reverse;
-    // If the menu on a mobile device will open then it could go under the image or other content. This makes sure it will be on top of content in stacking order and be usable
-    z-index: 10;
-
-    // Change the position of the navigation menu below the header image
-    @include respond-to("large") {
-        flex-direction: column;
-    }
+// Auxiliary classes
+.text-center {
+    text-align: center;
 }
 
+.margin-center {
+    margin: 0 auto;
+}
+
+.align-center {
+    align-self: center;
+}
+
+.align-start {
+    align-self: flex-start;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+// Main content
 main {
-    z-index: 5; // Main element will be behind mobile menu in stacking order
+    background-color: $white;
+    color: $grey;
+
     // Moves content containers from edges of the viewport
-    & > div,
-    & > section,
-    & > form {
-        padding: 2rem 0.9rem;
+    &>div,
+    &>section,
+    &>form {
+        padding: 2rem 1.5rem;
     }
 
     @include respond-to("very-small") {
-        & > div,
-        & > section,
-        & > form {
+
+        &>div,
+        &>section,
+        &>form {
             padding: 2rem 2rem;
         }
     }
 
-    @include respond-to("small") {
-        & > div,
-        & > section {
+    @include respond-to("large") {
+
+        &>div,
+        &>section {
             padding: 2rem 4rem;
+        }
+    }
+
+    @include respond-to("very-large") {
+
+        &>div,
+        &>section {
+            padding: 2rem 10rem;
+        }
+    }
+
+    @include respond-to("2k") {
+
+        &>div,
+        &>section {
+            padding: 2rem 20rem;
+        }
+    }
+
+    @include respond-to("4k") {
+
+        &>div,
+        &>section {
+            padding: 2rem 40rem;
         }
     }
 }
 
+// Headers font
 h1,
 h2,
 h3 {
     font-family: $secondary-font-stack;
-    text-transform: capitalize;
+    color: $white;
 }
 
-h2,
-h3,
-figure {
-    text-align: center;
-}
-
+// Headers styling
 h1,
 h2 {
-    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    text-shadow: $black 0px 0px 2px,
+        $black 0px 0px 2px,
+        $black 0px 0px 2px,
+        $black 0px 0px 2px,
+        $black 0px 0px 2px,
+        $black 0px 0px 2px,
+        $black 2px 2px 4px;
+
+    letter-spacing: 0.1rem;
 }
 
-// Text on header image font styling
-header,
-header p,
-header h1,
-.code {
+// Vertical line on the left side of the header
+.header-styling {
+    position: relative;
+    padding-left: 0.4rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0.1rem;
+        height: 60%;
+        top: 0.4rem;
+        left: 0;
+        background: $background-color;
+    }
+}
+
+// Home page header font
+header {
     font-family: $code-font-stack;
 }
 
 h1 {
-    color: $headers-color;
-    font-size: 2.5rem;
-    margin-bottom: 1.2rem;
-    padding-left: 0.4rem;
+    font-size: $mod_1*$mod_1*$mod_1*$mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
 }
 
 h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: $mod_1*$mod_1*$mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1*$mod_1 *$min_font, $mod_2*$mod_2*$mod_2 *$min_font);
 }
 
 h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.6rem;
-    color: $headers-color;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0);
-}
-
-p {
-    padding: 0.3rem;
-    font-size: 0.9rem;
-}
-
-figure {
-    border: 1px solid $border-color;
+    font-size: $mod_1*$mod_1 *1rem;
+    @include fluid-type($min_width, $max_width, $mod_1*$mod_1 *$min_font, $mod_2*$mod_2 *$min_font);
 }
 
 ul {
@@ -151,22 +189,38 @@ a {
 }
 
 img {
-    display: block; // remove white space on bottom of image
+    display: block; // Remove white space on bottom of image
     max-width: 100%;
     margin: 0 auto;
 }
 
-.disable-element {
-    // Disable third image from "my latest work" and enable on large screen
-    display: none;
+// Latest work section
+section.latest-work {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+// The main content of all pages is encapsulated inside the container
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+// Hides borderline on SVG
+svg {
+    margin-bottom: -1px;
+    margin-top: -1px;
+}
+
+// Makes SVG cover less space
+svg.svg-margin {
+    margin-top: -5rem;
+
+    @include respond-to("very-large") {
+        margin-top: -6rem;
+    }
 
     @include respond-to("huge") {
-        display: block;
-    }
-}
-.container {
-    // Main section styles
-    h2 {
-        margin-top: 4rem;
+        margin-top: -9rem;
     }
 }

@@ -1,0 +1,11 @@
+// Shadow line under nav strap, separates menu and header
+@use "../abstracts/index" as *;
+
+.nav-underline {
+    @include respond-to("large") {
+        background: $nav-underline;
+        width: 82%;
+        margin-left: 18%;
+        height: 1px;
+    }
+}

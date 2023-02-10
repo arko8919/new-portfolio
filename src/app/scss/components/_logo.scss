@@ -1,0 +1,18 @@
+@use "../abstracts/index" as *;
+
+
+// Website logo
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 7rem;
+    height: 6rem; // Logo height matched to nav strap height 
+    z-index: 99;
+    background: center / contain no-repeat url(assets/images/virtual-cave-logo.png);
+
+    @include respond-to("very-small") {
+        width: 5rem;
+        height: 6rem; // Logo height matched to nav strap height 
+    }
+}
