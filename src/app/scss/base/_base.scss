@@ -103,6 +103,14 @@ main {
         }
     }
 
+    @include respond-to("huge") {
+
+        &>div,
+        &>section {
+            padding: 2rem 10rem;
+        }
+    }
+
     @include respond-to("2k") {
 
         &>div,
