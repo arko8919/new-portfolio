@@ -2,27 +2,27 @@
 @use '../abstracts/mixins' as *;
 
 
-// .skills-intro,
-// .skills-list,
-// .skills {
+.skills-intro,
+.skills-list,
+.skills {
 
-//     // Align sections
-//     @include respond-to("very-small") {
-//         padding: 2rem 5rem;
-//     }
+    // Align sections
+    @include respond-to("medium") {
+        padding: 2rem 5rem;
+    }
 
-//     @include respond-to("medium") {
-//         padding: 2rem 10rem;
-//     }
+    @include respond-to("large") {
+        padding: 2rem 8rem;
+    }
 
-//     @include respond-to("large") {
-//         padding: 2rem 12rem;
-//     }
+    @include respond-to("huge") {
+        padding: 2rem 15rem;
+    }
 
-//     @include respond-to("2k") {
-//         padding: 2rem 30rem;
-//     }
-// }
+    @include respond-to("2k") {
+        padding: 2rem 27rem;
+    }
+}
 
 // List of skills with icons
 .skills-icons {

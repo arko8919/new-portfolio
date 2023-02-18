@@ -7,6 +7,8 @@ html {
     font-size: 100%;
 
     height: 100%;
+    // On some small screen size, it disable horizontal scroll bar 
+    overflow-x: hidden;
 
     // Responsive font size
     @include fluid-type($min-width, $max-width, $min-font, $max-font);
@@ -19,6 +21,9 @@ html {
 }
 
 body {
+    // On some small screen size, it disable horizontal scroll bar 
+    overflow-x: hidden;
+
     user-select: none;
 
     font-family: $primary-font-stack;

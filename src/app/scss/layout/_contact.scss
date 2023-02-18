@@ -6,6 +6,7 @@
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
+    user-select: text;
 
     @include respond-to("very-small") {
         padding: 2rem 5rem;
