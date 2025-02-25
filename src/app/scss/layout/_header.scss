@@ -7,7 +7,7 @@ header {
     justify-content: center;
     align-items: center;
 
-    // It makes sure that on a large screen SVG background won't cover a button making it unable to click 
+    // It makes sure that on a large screen SVG decoration background won't cover a "Check my work" button making it unable to click 
     @include respond-to('large') {
         position: relative;
         z-index: 2;

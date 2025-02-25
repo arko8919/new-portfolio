@@ -116,9 +116,9 @@
                     content: "";
                     position: absolute;
                     top: 0;
+                    left: 0;
                     height: 1.1rem;
                     padding: 0 0.4rem;
-                    left: 0; // Move skills bars to the right. This allow to use 100% width 
                     z-index: -10;
                     background: $text;
                 }
@@ -126,15 +126,15 @@
 
             // Skill progress on technology
             &:nth-child(1) .bar:after {
-                width: 74%;
+                width: 75%;
             }
 
             &:nth-child(2) .bar:after {
-                width: 72%;
+                width: 70%;
             }
 
             &:nth-child(3) .bar::after {
-                width: 78%;
+                width: 80%;
             }
 
             &:nth-child(4) .bar::after {
@@ -142,18 +142,26 @@
             }
 
             &:nth-child(5) .bar::after {
-                width: 64%;
+                width: 65%;
             }
 
             &:nth-child(6) .bar::after {
-                width: 30%;
-            }
-
-            &:nth-child(7) .bar::after {
                 width: 45%;
             }
 
+            &:nth-child(7) .bar::after {
+                width: 70%;
+            }
+
             &:nth-child(8) .bar::after {
+                width: 65%;
+            }
+
+            &:nth-child(9) .bar::after {
+                width: 65%;
+            }
+
+            &:nth-child(10) .bar::after {
                 width: 30%;
             }
         }

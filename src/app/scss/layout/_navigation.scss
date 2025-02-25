@@ -5,8 +5,10 @@
 .nav-strap {
     position: relative;
     height: 6rem; // Nav strap height
+
     display: flex;
-    // This sets the positions of the hamburger icon
+
+    // This sets the position of the hamburger icon on nav menu strap
     flex-flow: row nowrap;
     align-items: center;
     justify-content: end;
@@ -15,15 +17,12 @@
         height: 4rem; // Nav strap height
     }
 
-    @include respond-to("large") {
-        display: flex;
-        flex-flow: row nowrap;
-    }
-
+    // This text is only visible on devices with small screens
     .menu-text {
         padding-right: 1.3rem;
         text-transform: uppercase;
 
+        // Disable text
         @include respond-to("large") {
             display: none;
         }
@@ -35,13 +34,11 @@
     background: $background-color;
     position: absolute;
     width: 100%;
-    top: 6rem; // Move it from the top, using the same height as the height of the parent "nav strap"
-    // Hide mobile menu
-    left: -100%;
+    top: 6rem; // Move it from the top on small screen devices with hamburger icon bar, using the same height as the height of the parent "nav strap"
+    left: -100%; // Hide mobile menu
 
-    // Make it position under parent "nav strap"
-    z-index: 5;
-    height: 100vh; // Cover screen
+    z-index: 5; // When the menu is displayed, it will cover other content 
+    height: 100vh; // Cover the whole displayed screen
 
     display: flex;
     flex-flow: column nowrap;
@@ -49,8 +46,8 @@
     transition: left 0.4s;
 
     @include respond-to("very-small") {
-        top: 4rem; // Move it from the top, using the same height as the height of the parent "nav strap"
-        height: initial; // Reset menu height
+        top: 4rem; // Move it from the top on small screen devices with hamburger icon bar, using the same height as the height of the parent "nav strap"
+        height: initial; // Reset menu height. It is useful when a website changes size from a Menu with a hamburger icon to a large screen menu and back
     }
 
     @include respond-to("large") {
@@ -60,17 +57,18 @@
         background: none;
 
         // Reset values to default
-        transform: none;
         position: initial;
-        z-index: auto;
+        z-index: auto; // initial value is auto
+        transform: none;
         transition: none;
-
+       
+        // The effect of the line disappearing across the entire width of the menu on the bottom of the nav strap 
         width: 82%;
         margin-left: 18%;
     }
 
     .links {
-        border-bottom: 0.11rem solid $grey; // Add menu items separation lines
+        border-bottom: 0.05rem solid $grey; // Add menu items separation lines
 
         @include respond-to("large") {
             border: none; // Turn off menu items separation lines on a larger screen

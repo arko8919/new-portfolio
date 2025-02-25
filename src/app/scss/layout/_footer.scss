@@ -26,6 +26,7 @@ footer {
 
     // Email address
     .contact-info {
+
         padding: 1rem 1.5rem;
         writing-mode: vertical-rl;
         text-orientation: sideways;
@@ -51,7 +52,7 @@ footer {
     }
 
     // Copyright
-    p {
+    .copyrights {
         grid-column: 1 / 4;
         grid-row: 2;
 

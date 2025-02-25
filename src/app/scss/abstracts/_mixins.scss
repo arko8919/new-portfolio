@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use 'variables' as *;
 
-// Media queries for min-width of used device
+// Media queries for min-width of device
 @mixin respond-to($breakpoint) {
   $raw-query: map-get($breakpoints, $breakpoint);
 
